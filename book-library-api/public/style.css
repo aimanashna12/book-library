@@ -1,0 +1,346 @@
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+  margin: 0;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Authentication Modal */
+#auth-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+}
+
+#auth-modal {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 380px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+.auth-tabs {
+  display: flex;
+  margin-bottom: 25px;
+  border-radius: 25px;
+  background: #e0e0e0;
+  padding: 5px;
+  gap: 5px; /* Add space between tab buttons */
+}
+
+.tab-link {
+  flex: 1;
+  padding: 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-radius: 20px;
+  font-weight: 500;
+  color: #555;
+}
+
+.tab-link.active {
+  background: #fff;
+  color: #007bff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+#auth-modal input {
+  width: calc(100% - 22px);
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #f7f7f7;
+}
+
+#auth-modal button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(to right, #2575fc, #6a11cb);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+#auth-modal button:hover {
+  /* Hover effects removed */
+}
+
+/* Navbar */
+#navbar {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.navbar-brand {
+  font-size: 1.5em;
+  font-weight: 600;
+  color: #007bff;
+}
+
+.navbar-user {
+  display: flex;
+  align-items: center;
+}
+
+#username-display {
+  margin-right: 15px;
+  font-weight: 500;
+}
+
+#logout-btn, #add-book-btn {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-left: 10px;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+#logout-btn {
+  background-color: #fdecec;
+  color: #dc3545;
+}
+
+#logout-btn:hover {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.btn-primary {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.btn-primary:hover {
+  background-color: #28a745;
+  color: #fff;
+}
+
+/* Search and Filter Bar */
+#search-filter-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+}
+
+.search-box, .filter-box {
+  display: flex;
+  gap: 10px;
+}
+
+#search-input, #genre-filter, #rating-filter {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  min-width: 150px;
+}
+
+#search-btn, #filter-btn {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#search-btn:hover, #filter-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Book Grid */
+#book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.book-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.book-card h3 {
+  margin-top: 0;
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+.book-card .author {
+  color: #666;
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+.book-card .genre {
+  background-color: #e9ecef;
+  color: #495057;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.85em;
+  align-self: flex-start;
+  margin-bottom: 15px;
+}
+
+.book-card .rating {
+  margin-top: auto;
+  color: #ffc107;
+  font-size: 1.1em;
+}
+
+/* Pagination */
+#pagination {
+  text-align: center;
+  margin-top: 40px;
+}
+
+#pagination button {
+  padding: 10px 15px;
+  margin: 0 5px;
+  border: 1px solid #007bff;
+  background: #fff;
+  color: #007bff;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+
+#pagination button:hover {
+  background: #007bff;
+  color: #fff;
+}
+
+#pagination button:disabled {
+  background: #007bff;
+  color: #fff;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Add Book Modal */
+#add-book-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+#add-book-modal {
+  background: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 450px;
+}
+
+#add-book-modal h2 {
+  margin-top: 0;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+#add-book-form input {
+  width: calc(100% - 24px);
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.modal-actions button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+#cancel-add-book-btn {
+  background-color: #f1f1f1;
+  color: #555;
+}
+
+#cancel-add-book-btn:hover {
+  background-color: #e0e0e0;
+}
